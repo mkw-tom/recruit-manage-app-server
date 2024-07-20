@@ -4,13 +4,15 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/node": "^20.14.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
