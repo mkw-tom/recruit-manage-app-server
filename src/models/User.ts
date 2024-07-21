@@ -1,5 +1,4 @@
-import { Document, Schema } from "mongoose";
-
+import { Document, Schema, SchemaDefinition, model } from "mongoose";
 const mongoose = require("mongoose");
 
 interface IUser extends Document {
@@ -10,6 +9,8 @@ interface IUser extends Document {
   isAdmin: boolean,
   allCompanies: [],
   passCompanies: [],
+  createdAt: Date,
+  updatedAt: Date,
 }
 
 const UserSchema = new Schema<IUser>({
@@ -48,7 +49,6 @@ const UserSchema = new Schema<IUser>({
     type: [Object],
     default: []
   },
-}, {
-  timestamps: true
-});
+}, {timestamps: true});
 
+module.exports = model<IUser>('user', UserSchema)
