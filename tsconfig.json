@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
     "target": "ES6",                          // 出力するJavaScriptのバージョン
     "module": "CommonJS",                       // モジュールシステムの指定
     "moduleResolution": "node",               // モジュール解決の戦略
