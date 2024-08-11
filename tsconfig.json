@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "target": "ES6",                          // 出力するJavaScriptのバージョン
     "module": "CommonJS",                       // モジュールシステムの指定
     "moduleResolution": "node",               // モジュール解決の戦略
@@ -20,6 +20,5 @@
   ],
   "exclude": [
     "node_modules",                           // コンパイル対象外のディレクトリ
-    "dist"
   ]
 }
