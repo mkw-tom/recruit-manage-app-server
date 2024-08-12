@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 3002;
+const port = 3002 || process.env.PORT;
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const postsRoutes = require('./routes/posts');
@@ -20,6 +20,6 @@ app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postsRoutes);
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log('サーバーが立ち上がっています');
 });
