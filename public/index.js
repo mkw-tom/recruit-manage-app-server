@@ -1,7 +1,7 @@
 "use strict";
 const express = require('express');
 const app = express();
-const port = 3002 || process.env.PORT;
+const port = process.env.PORT || 3002;
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const postsRoutes = require('./routes/posts');
@@ -14,7 +14,9 @@ mongoose
     .connect(monogURL)
     .then(() => console.log('DB接続中...'))
     .catch((err) => console.log(err));
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
