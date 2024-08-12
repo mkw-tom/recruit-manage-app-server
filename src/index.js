@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3002;
@@ -11,14 +11,18 @@ const cors = require('cors');
 dotenv.config();
 const monogURL = process.env.MONGO_URL;
 mongoose
-    .connect(monogURL)
-    .then(() => console.log('DB接続中...'))
-    .catch((err) => console.log(err));
-app.use(cors());
+  .connect(monogURL)
+  .then(() => console.log('DB接続中...'))
+  .catch((err) => console.log(err));
+app.use(
+  cors({
+    origin: '*',
+  })
+);
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postsRoutes);
 app.listen(PORT, () => {
-    console.log('サーバーが立ち上がっています');
+  console.log('サーバーが立ち上がっています');
 });
