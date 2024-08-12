@@ -1,7 +1,7 @@
 "use strict";
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3002;
+const port = 3002;
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const postsRoutes = require('./routes/posts');
@@ -15,7 +15,7 @@ mongoose
     .then(() => console.log('DB接続中...'))
     .catch((err) => console.log(err));
 app.use(cors({
-    origin: '*'
+    origin: 'https://recruite-manage-app.vercel.app/'
 }));
 app.use(express.json());
 app.use('/api/users', userRoutes);
