@@ -16,7 +16,7 @@ mongoose
   .catch((err: Error) => console.log(err));
 app.use(
   cors({
-    origin: 'https://recruite-manage-app.vercel.app/'
+    origin: 'https://recruite-manage-app.vercel.app'
   })
 );
 app.use(express.json());
