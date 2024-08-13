@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const app = express();
-const PORT = 3002;
+const PORT =  process.env.PORT || 3002;
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const postsRoutes = require('./routes/posts');
