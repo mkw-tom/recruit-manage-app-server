@@ -21,7 +21,7 @@ app.use(
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 許可するHTTPメソッド
     allowedHeaders: [
       'Content-Type',
-      'application/json',
+      'Authorization',
       'X-Requested-With',
       'Accept',
       'Origin',
