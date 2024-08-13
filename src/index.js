@@ -14,11 +14,6 @@ mongoose
   .connect(monogURL)
   .then(() => console.log('DB接続中...'))
   .catch((err) => console.log(err));
-  app.use(
-    cors({
-      origin: '*'
-    })
-  );
 
 app.use(
   cors({
