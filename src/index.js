@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const app = express();
-const PORT =  process.env.PORT || 3002;
+const PORT = 3002;
 const userRoutes = require('./routes/users');
 const authRoutes = require('./routes/auth');
 const postsRoutes = require('./routes/posts');
@@ -14,22 +14,15 @@ mongoose
   .connect(monogURL)
   .then(() => console.log('DB接続中...'))
   .catch((err) => console.log(err));
-
 app.use(
   cors({
-  origin: '*', // すべてのオリジンを許可
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 許可するHTTPメソッド
-  allowedHeaders: [
-    'Content-Type',
-    'Authorization',
-    'X-Requested-With',
-    'Accept',
-    'Origin',
-    'X-CSRF-Token'
-  ] // 許可するヘッダー
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-app.options('*', cors()); // プレフライトリクエストを処理
+// プレフライトリクエストを処理
+app.options('*', cors()); // これでOPTIONSメソッドのリクエストも処理されます
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
