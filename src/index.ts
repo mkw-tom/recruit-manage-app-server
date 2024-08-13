@@ -16,6 +16,7 @@ mongoose
   .catch((err: Error) => console.log(err));
 
 // プレフライトリクエストを処理
+app.use(cors())
 app.options('*', cors()); // これでOPTIONSメソッドのリクエストも処理されます
 app.use(express.json());
 app.use('/api/users', userRoutes);
