@@ -14,9 +14,19 @@ mongoose
   .connect(monogURL as string)
   .then(() => console.log('DB接続中...'))
   .catch((err: Error) => console.log(err));
+
 app.use(
   cors({
-    origin: '*',
+    origin: '*', // すべてのオリジンを許可
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // 許可するHTTPメソッド
+    allowedHeaders: [
+      'Content-Type',
+      'Authorization',
+      'X-Requested-With',
+      'Accept',
+      'Origin',
+      'X-CSRF-Token',
+    ], // 許可するヘッダー
   })
 );
 app.use(express.json());
