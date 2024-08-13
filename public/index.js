@@ -14,14 +14,6 @@ mongoose
   .connect(monogURL)
   .then(() => console.log('DB接続中...'))
   .catch((err) => console.log(err));
-app.use(
-  cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  })
-);
-
 // プレフライトリクエストを処理
 app.options('*', cors()); // これでOPTIONSメソッドのリクエストも処理されます
 app.use(express.json());
