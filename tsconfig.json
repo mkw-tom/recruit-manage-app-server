@@ -2,23 +2,23 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "target": "ES6",                          // 出力するJavaScriptのバージョン
-    "module": "CommonJS",                       // モジュールシステムの指定
-    "moduleResolution": "node",               // モジュール解決の戦略
-    "jsx": "react-jsx",                       // JSXの変換方式（React 17以降）
-    "strict": true,                           // 厳密な型チェック
-    "esModuleInterop": true,                  // ESモジュールとCommonJSの互換性
-    "skipLibCheck": true,                     // 型定義ファイルのチェックをスキップ
+    "target": "ES6", // 出力するJavaScriptのバージョン
+    "module": "CommonJS", // モジュールシステムの指定
+    "moduleResolution": "node", // モジュール解決の戦略
+    "jsx": "react-jsx", // JSXの変換方式（React 17以降）
+    "strict": true, // 厳密な型チェック
+    "esModuleInterop": true, // ESモジュールとCommonJSの互換性
+    "skipLibCheck": true, // 型定義ファイルのチェックをスキップ
     "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を厳密にチェック
-    "baseUrl": "./",                          // 相対パスの基準となるディレクトリ
+    "baseUrl": "./", // 相対パスの基準となるディレクトリ
     "paths": {
-      "@/*": ["src/*"]                       // エイリアス設定
+      "@/*": ["src/*"] // エイリアス設定
     }
   },
   "include": [
-    "src"                                     // コンパイル対象のファイル
+    "src/**/*" // コンパイル対象のファイル
   ],
   "exclude": [
-    "node_modules",                           // コンパイル対象外のディレクトリ
+    "node_modules" // コンパイル対象外のディレクトリ
   ]
 }
