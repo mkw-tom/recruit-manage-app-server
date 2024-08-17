@@ -17,7 +17,7 @@
   },
   "include": [
     "src/**/*" // コンパイル対象のファイル
-  ],
+, "src/api"  ],
   "exclude": [
     "node_modules" // コンパイル対象外のディレクトリ
   ]
